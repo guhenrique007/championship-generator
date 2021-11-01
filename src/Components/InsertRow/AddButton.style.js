@@ -14,7 +14,7 @@ export function AddButton () {
   return (
     <StyledButton
     onClick={e => {
-      if(team) {
+      if(team && !participants.includes(team)) {
         setParticipants([...participants, team])}
       }
     }
