@@ -9,7 +9,7 @@ import Paper from '@mui/material/Paper';
 import { useParticipant } from "../../context/Participants";
 
 export function TableChamp() {
-  const { participants, setParticipants} = useParticipant();
+  const { participants } = useParticipant();
 
   return (
     <TableContainer component={Paper} sx={{maxWidth: 600}}>
