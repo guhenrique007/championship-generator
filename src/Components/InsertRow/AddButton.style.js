@@ -13,7 +13,11 @@ export function AddButton () {
 
   return (
     <StyledButton
-    onClick={e => setParticipants([...participants, team])}
+    onClick={e => {
+      if(team) {
+        setParticipants([...participants, team])}
+      }
+    }
     >
       +
     </StyledButton>
