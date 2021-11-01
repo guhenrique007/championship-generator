@@ -6,6 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { useParticipant } from "../../context/Participants";
 
 // function createData(name, calories, fat, carbs, protein) {
 //   return { name, calories, fat, carbs, protein };
@@ -17,6 +18,8 @@ const rows = [
 ];
 
 export function TableChamp() {
+  const { participants, setParticipants} = useParticipant();
+
   return (
     <TableContainer component={Paper} sx={{maxWidth: 600}}>
       <Table aria-label="simple table">
@@ -26,13 +29,13 @@ export function TableChamp() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {participants.map((participant) => (
             <TableRow
-              key={row}
+              key={participant}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {row}
+                {participant}
               </TableCell>
             </TableRow>
           ))}

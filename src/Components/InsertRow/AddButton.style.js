@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useTeam } from "../../context/Team";
+import { useParticipant } from "../../context/Participants";
 
 const StyledButton = styled.button`
   width: 20px;
@@ -8,10 +9,11 @@ const StyledButton = styled.button`
 `
 export function AddButton () {
   const { team } = useTeam();
+  const { participants, setParticipants} = useParticipant();
 
   return (
     <StyledButton
-    onClick={e => console.log(team)}
+    onClick={e => setParticipants([...participants, team])}
     >
       +
     </StyledButton>
