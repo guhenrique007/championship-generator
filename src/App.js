@@ -1,25 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import { AppContainer } from './Components/AppContainer.style';
+import { GlobalStyles } from './GlobalStyles.style'
+import { InsertRow } from './Components/InsertRow/insertRow';
+import { TableChamp } from './Components/Table/TableChamp.style';
+import TeamProvider from './context/Team';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TeamProvider>
+     <AppContainer>
+        <GlobalStyles />
+        <h3>Adicione</h3>
+        <InsertRow></InsertRow>
+        <TableChamp></TableChamp>
+      </AppContainer>
+    </TeamProvider>
   );
-}
+} 
 
 export default App;
