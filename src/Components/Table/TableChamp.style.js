@@ -8,15 +8,6 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useParticipant } from "../../context/Participants";
 
-// function createData(name, calories, fat, carbs, protein) {
-//   return { name, calories, fat, carbs, protein };
-// }
-
-const rows = [
-  // createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  'Palmeiras'
-];
-
 export function TableChamp() {
   const { participants, setParticipants} = useParticipant();
 
@@ -25,7 +16,9 @@ export function TableChamp() {
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Equipes:</TableCell>
+            <TableCell sx={{backgroundColor: 'green', color: 'white', fontWeight: 600}}>
+              Championship
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
