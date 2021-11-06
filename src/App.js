@@ -6,6 +6,7 @@ import { TableChamp } from './Components/Table/TableChamp.style';
 import TeamProvider from './context/Team';
 import ParticipantProvider from './context/Participants';
 import { SchedulerButton } from './Components/SchedulerButton.style';
+import { TableFixtures } from './Components/TableFixtures/TableFixtures';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <InsertRow></InsertRow>
           <TableChamp></TableChamp>
           <SchedulerButton></SchedulerButton>
+          <TableFixtures></TableFixtures>
         </AppContainer>
       </ParticipantProvider>
     </TeamProvider>
