@@ -13,7 +13,6 @@ export function InputField () {
       value={team}
       onChange={e => {
           setTeam(e.target.value)
-          //console.log(e.target.value)
         }
       }
     />

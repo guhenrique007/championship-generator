@@ -16,12 +16,12 @@ const VersusCell = styled(TableCell)`
   min-width: 10px;
 `;
 
-export function RowFixture () {
+export function RowFixture ({teamA, teamB}) {
   return (
     <TableRow>
-      <TableCell>team a</TableCell>
+      <TableCell>{teamA}</TableCell>
       <VersusCell>X</VersusCell>
-      <TableCell>team b</TableCell>
+      <TableCell>{teamB}</TableCell>
     </TableRow>
   )
 }
