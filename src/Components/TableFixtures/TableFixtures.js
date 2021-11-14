@@ -12,10 +12,17 @@ export function TableFixtures () {
   const { fixtures } = useFixture();
 
   return (
-    <StyledTable>
-      {fixtures.map((match, i) => (
-        <RowFixture teamA={match[0]} teamB={match[1]} key={i}></RowFixture>
+    <>
+      {fixtures.map((matches, i) => (
+        <div>
+          <span>Round {i} </span>
+          <StyledTable key={i}>
+            {matches.map((match, j) => (
+              <RowFixture teamA={match[0]} teamB={match[1]} key={j}></RowFixture>
+            ))}
+          </StyledTable>
+        </div>
       ))}
-    </StyledTable>
+    </>
   )
 }
