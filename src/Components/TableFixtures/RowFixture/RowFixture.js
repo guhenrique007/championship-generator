@@ -12,6 +12,10 @@ const TableCell = styled.td`
   min-width: 200px;
 `;
 
+const TableCell2 = styled(TableCell)`
+  text-align: right;
+`
+
 const VersusCell = styled(TableCell)`
   min-width: 10px;
 `;
@@ -21,7 +25,7 @@ export function RowFixture ({teamA, teamB}) {
     <TableRow>
       <TableCell>{teamA}</TableCell>
       <VersusCell>X</VersusCell>
-      <TableCell>{teamB}</TableCell>
+      <TableCell2>{teamB}</TableCell2>
     </TableRow>
   )
 }

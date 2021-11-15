@@ -9,9 +9,10 @@ import FixtureProvider from './context/Fixtures';
 import { SchedulerButton } from './Components/SchedulerButton.style';
 import { TableFixtures } from './Components/TableFixtures/TableFixtures';
 
+
 function App() {
   return (
-    <TeamProvider>
+    <TeamProvider>s
       <ParticipantProvider>
         <FixtureProvider>
           <AppContainer>
@@ -19,7 +20,7 @@ function App() {
             <h3>Adicione</h3>
             <InsertRow></InsertRow>
             <TableChamp></TableChamp>
-            <SchedulerButton></SchedulerButton>
+              <SchedulerButton></SchedulerButton>
             <TableFixtures></TableFixtures>
           </AppContainer>
         </FixtureProvider>

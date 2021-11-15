@@ -13,11 +13,17 @@ export function SchedulerButton () {
   const { setFixtures } = useFixture();
 
   return (
-    <StyledButton onClick={e => {
-      const fixturesSorted = sortFixtures(participants);
-      setFixtures(fixturesSorted);
-    }}>
-      Schedule
-    </StyledButton>
+    <div>
+      {
+        participants.length > 1 ?
+          <StyledButton onClick={e => {
+            const fixturesSorted = sortFixtures(participants);
+            setFixtures(fixturesSorted);
+          }}>
+            Schedule
+          </StyledButton>
+        : <></>
+      }
+    </div>
   )
 }
