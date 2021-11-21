@@ -7,6 +7,7 @@ const StyledTable = styled.table`
   height: 50px;
   border-spacing: 0px;
   margin-top: 5px;
+  margin-bottom: 30px;
 `
 
 const Container = styled.div`

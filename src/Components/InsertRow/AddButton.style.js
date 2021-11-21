@@ -6,6 +6,8 @@ const StyledButton = styled.button`
   width: 20px;
   height: 20px;
   background-color: aquamarine;
+  display: flex;
+  justify-content: center;
 `
 export function AddButton () {
   const { team } = useTeam();

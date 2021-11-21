@@ -5,8 +5,8 @@ import { Container } from './Container.style';
 export function InsertRow () {
   return (
     <Container>
-      <AddButton>+</AddButton>
       <InputField></InputField>
+      <AddButton>+</AddButton>
     </Container>
   );
 }
