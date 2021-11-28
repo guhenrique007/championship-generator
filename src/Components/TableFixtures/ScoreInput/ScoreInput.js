@@ -34,18 +34,18 @@ export function ScoreInput (team) {
       console.log(table)
       if(teamAElement.value > teamBElement.value) {
         const tempTable = table; 
-        tempTable[teamA][roundNumber] = 'V'
-        tempTable[teamB][roundNumber] = 'D'
+        tempTable[teamA][roundNumber] = 'W'
+        tempTable[teamB][roundNumber] = 'L'
         setTable({...tempTable})
       } else if (teamAElement.value < teamBElement.value) {
         const tempTable = table; 
-        tempTable[teamA][roundNumber] = 'D'
-        tempTable[teamB][roundNumber] = 'V'
+        tempTable[teamA][roundNumber] = 'L'
+        tempTable[teamB][roundNumber] = 'W'
         setTable({...tempTable})
       } else {
         const tempTable = table; 
-        tempTable[teamA][roundNumber] = 'E'
-        tempTable[teamB][roundNumber] = 'E'
+        tempTable[teamA][roundNumber] = 'D'
+        tempTable[teamB][roundNumber] = 'D'
         setTable({...tempTable})
       }
 
