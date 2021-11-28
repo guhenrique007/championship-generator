@@ -22,9 +22,15 @@ export function TableFixtures () {
       {fixtures.map((matches, i) => (
         <div>
           <span>Round {i+1} </span>
-          <StyledTable key={i}>
+          <StyledTable key={i} id={`round~${i}`}>
             {matches.map((match, j) => (
-              <RowFixture teamA={match[0]} teamB={match[1]} key={j}></RowFixture>
+              <RowFixture 
+                teamA={match[0]} 
+                teamB={match[1]} 
+                key={j}
+                id={match[0]+'~'+match[1]} 
+              > 
+              </RowFixture>
             ))}
           </StyledTable>
         </div>

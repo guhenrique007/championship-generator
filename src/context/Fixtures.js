@@ -21,5 +21,6 @@ export function useFixture() {
   const context = useContext(FixtureContext);
   if(!context) throw new Error("useFixture must be used within a FixtureProvider")
   const { fixtures, setFixtures } = context;
+  console.log(fixtures)
   return { fixtures, setFixtures };
 }

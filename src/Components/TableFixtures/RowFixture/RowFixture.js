@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ScoreInput } from "../ScoreInput/ScoreInput";
 
 const TableRow = styled.tr`
   width: 100px;
@@ -22,9 +23,11 @@ const VersusCell = styled(TableCell)`
 
 export function RowFixture ({teamA, teamB}) {
   return (
-    <TableRow>
-      <TableCell>{teamA}</TableCell>
+    <TableRow id={teamA+'~'+teamB}>
+      <TableCell>{teamA}</TableCell>     
+      <ScoreInput id={teamA}></ScoreInput>
       <VersusCell>X</VersusCell>
+      <ScoreInput id={teamB}></ScoreInput>
       <TableCell2>{teamB}</TableCell2>
     </TableRow>
   )
