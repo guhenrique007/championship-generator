@@ -8,11 +8,13 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useParticipant } from "../../context/Participants";
 import { useTable } from '../../context/Table';
-import { calculatePoints } from '../../helpers/calculate-points';
+import { calculateGoals, calculatePoints, counterResults } from '../../helpers/calculate-points';
+import { useGoals } from '../../context/Goals';
 
 export function TableChamp() {
   const { participants } = useParticipant();
   const { table } = useTable();
+  const { goals } = useGoals();
 
   return (
     <TableContainer component={Paper} sx={{maxWidth: 1000}}>
@@ -23,7 +25,7 @@ export function TableChamp() {
               Championship
             </TableCell>
             <TableCell>
-              Points
+              Played
             </TableCell>
             <TableCell>
               Won
@@ -44,7 +46,7 @@ export function TableChamp() {
               GD
             </TableCell>
             <TableCell>
-              Played
+              Points
             </TableCell>
           </TableRow>
         </TableHead>
@@ -57,6 +59,13 @@ export function TableChamp() {
               <TableCell component="th" scope="row">
                 {participant}
               </TableCell>
+              <TableCell>{table[participant].length}</TableCell>
+              <TableCell>{(counterResults(table[participant], 'W'))}</TableCell>
+              <TableCell>{(counterResults(table[participant], 'D'))}</TableCell>
+              <TableCell>{(counterResults(table[participant], 'L'))}</TableCell>
+              <TableCell>{calculateGoals(goals[participant], 'for')}</TableCell>
+              <TableCell>{calculateGoals(goals[participant], 'against')}</TableCell>
+              <TableCell>{calculateGoals(goals[participant], 'for') - calculateGoals(goals[participant], 'against')}</TableCell>
               <TableCell>{calculatePoints(table[participant])}</TableCell>
             </TableRow>
           ))}

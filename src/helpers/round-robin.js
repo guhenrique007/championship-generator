@@ -1,4 +1,3 @@
-
 export default function roundRobin(participants) {
   const tournament = [];
 

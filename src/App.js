@@ -7,6 +7,7 @@ import TeamProvider from './context/Team';
 import ParticipantProvider from './context/Participants';
 import FixtureProvider from './context/Fixtures';
 import TableProvider from './context/Table';
+import GoalsProvider from './context/Goals';
 import { SchedulerButton } from './Components/SchedulerButton.style';
 import { TableFixtures } from './Components/TableFixtures/TableFixtures';
 import Header from './Components/Header/Header';
@@ -16,17 +17,19 @@ function App() {
     <TeamProvider>
       <ParticipantProvider>
         <TableProvider>
-          <FixtureProvider>
-            <AppContainer>
-              <GlobalStyles />
-              <Header></Header>
-              <h3>Adicione</h3>
-              <InsertRow></InsertRow>
-              <TableChamp></TableChamp>
-                <SchedulerButton></SchedulerButton>
-              <TableFixtures></TableFixtures>
-            </AppContainer>
-          </FixtureProvider>
+          <GoalsProvider>
+            <FixtureProvider>
+              <AppContainer>
+                <GlobalStyles />
+                <Header></Header>
+                <h3>Adicione</h3>
+                <InsertRow></InsertRow>
+                <TableChamp></TableChamp>
+                  <SchedulerButton></SchedulerButton>
+                <TableFixtures></TableFixtures>
+              </AppContainer>
+            </FixtureProvider>
+          </GoalsProvider>
         </TableProvider>
       </ParticipantProvider>
     </TeamProvider>

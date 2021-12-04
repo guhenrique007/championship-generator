@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import styled from "styled-components";
 import { useTable } from "../../../context/Table";
+import { useGoals } from "../../../context/Goals"; 
 
 const StyledInput = styled.input`
   width: 29px;
@@ -12,7 +13,8 @@ const StyledInput = styled.input`
 
 export function ScoreInput (team) {
   const inputRef = useRef(null);
-  const { table, setTable} = useTable();
+  const { table, setTable } = useTable();
+  const { goals, setGoals } = useGoals();
 
   const [score, setScore] = useState("");
 
@@ -48,7 +50,42 @@ export function ScoreInput (team) {
         tempTable[teamB][roundNumber] = 'D'
         setTable({...tempTable})
       }
+      
+      const tempGoals = goals;
+      // const currentGoalsForTeamA = goals[teamA] && goals[teamA].for ? ;
+      // const currentGoalsForTeamB = goals[teamB] && goals[teamB].for ? goals[teamB].for : [];
+      // const currentGoalsAgainstTeamA = goals[teamA] && goals[teamA].against ? goals[teamA].against : [];
+      // const currentGoalsAgainstTeamB = goals[teamB] && goals[teamB].against ? goals[teamB].against : [];
 
+      // tempGoals[teamA] = {
+      //   for: currentGoalsForTeamA,
+      //   against: currentGoalsAgainstTeamA,
+      // } ;
+      // tempGoals[teamB] = { 
+      //   for: currentGoalsForTeamB,
+      //   against: currentGoalsAgainstTeamB,
+      // };
+      try {
+        tempGoals[teamA].for[roundNumber] = teamAElement.value;
+        tempGoals[teamA].against[roundNumber] = teamBElement.value;
+      } catch {
+        tempGoals[teamA] = { for: [], against: []}
+        tempGoals[teamA].for[roundNumber] = teamAElement.value
+        tempGoals[teamA].against[roundNumber] = teamBElement.value
+      }
+
+      try {
+        tempGoals[teamB].for[roundNumber] = teamBElement.value;
+        tempGoals[teamB].against[roundNumber] = teamAElement.value;
+      } catch {
+        tempGoals[teamB] = { for: [], against: []}
+        tempGoals[teamB].for[roundNumber] = teamBElement.value
+        tempGoals[teamB].against[roundNumber] = teamAElement.value
+      }
+
+
+      setGoals({...tempGoals})
+      console.log(tempGoals)
       console.log('after', table)
     },
     [score]
