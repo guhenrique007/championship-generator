@@ -63,9 +63,9 @@ export function TableChamp() {
               <TableCell>{(counterResults(table[participant], 'W'))}</TableCell>
               <TableCell>{(counterResults(table[participant], 'D'))}</TableCell>
               <TableCell>{(counterResults(table[participant], 'L'))}</TableCell>
-              <TableCell>{calculateGoals(goals[participant], 'for')}</TableCell>
-              <TableCell>{calculateGoals(goals[participant], 'against')}</TableCell>
-              <TableCell>{calculateGoals(goals[participant], 'for') - calculateGoals(goals[participant], 'against')}</TableCell>
+              <TableCell>{calculateGoals(goals[participant], 'for') || 0}</TableCell>
+              <TableCell>{calculateGoals(goals[participant], 'against') || 0}</TableCell>
+              <TableCell>{calculateGoals(goals[participant], 'for') - calculateGoals(goals[participant], 'against') || 0}</TableCell>
               <TableCell>{calculatePoints(table[participant])}</TableCell>
             </TableRow>
           ))}
